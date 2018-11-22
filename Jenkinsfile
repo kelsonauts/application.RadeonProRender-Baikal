@@ -39,6 +39,6 @@ node('Render') {
 	}
 
 	stage('Clean workspace') {
-		cleanWS()	
+		cleanWs()	
 	}
 }
