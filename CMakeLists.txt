@@ -60,7 +60,7 @@ if (BAIKAL_ENABLE_STANDALONE OR BAIKAL_ENABLE_RPR)
     find_package(GLEW REQUIRED)
 endif (BAIKAL_ENABLE_STANDALONE OR BAIKAL_ENABLE_RPR)
 
-add_subdirectory(RadeonRays)
+add_subdirectory(RadeonRays_SDK)
 
 add_subdirectory(Baikal)
 
