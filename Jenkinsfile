@@ -9,7 +9,6 @@ node('Render') {
 	stage('Prepare') {
 		sh(script: """
 			set -x
-			cd RadeonProRender-Baikal
 			git  submodule update --init
 			"""
 		)
