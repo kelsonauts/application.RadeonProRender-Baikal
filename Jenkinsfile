@@ -31,7 +31,8 @@ node('Render') {
 
 	stage('Test') {
 		sh(script: """
-			cd ../BaikalTest
+			pwd
+			cd BaikalTest
 			../RprTest/BaikalTest -genref 1
 			"""
 		)
