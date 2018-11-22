@@ -2,8 +2,8 @@
 
 node('Render') {
 	stage('Checkout') {
-		checkout scm
 		deleteDir()
+		checkout scm
 	}
 
 	stage('Prepare') {
