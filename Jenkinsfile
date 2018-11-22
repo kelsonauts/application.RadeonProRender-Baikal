@@ -11,6 +11,7 @@ node('Render') {
 			set -x
 			pwd
 			ls -lah
+			git  submodule update --init
 			"""
 		)
 	}
