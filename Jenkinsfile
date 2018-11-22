@@ -32,8 +32,9 @@ node('Render') {
 	stage('Test') {
 		sh(script: """
 			pwd
+			WORKDIR=$(pwd)
 			cd BaikalTest
-			../RprTest/BaikalTest -genref 1
+			"${WORKDIR}"/RprTest/BaikalTest -genref 1
 			"""
 		)
 	}
