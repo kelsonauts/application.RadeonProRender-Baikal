@@ -9,6 +9,8 @@ node('Render') {
 	stage('Prepare') {
 		sh(script: """
 			set -x
+			pwd
+			ls -lah
 			git  submodule update --init
 			"""
 		)
