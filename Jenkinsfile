@@ -18,10 +18,13 @@ node('Render') {
 
 	stage('Build') {
 		sh(script: """
+			pwd
 			mkdir build
 			cd build
 			cmake -DCMAKE_BUILD_TYPE=Debug ..
 			make -j4
+			cd ..
+			pwd
 			"""
 		)
 	}
