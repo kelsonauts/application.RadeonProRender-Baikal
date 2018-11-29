@@ -26,6 +26,15 @@ node('Render') {
 		)
 	}
 
+	stage('Package') {
+		sh(script: """
+			cd build
+			make package
+			cd ..
+			"""
+		)
+	}
+
 	stage('Test') {
 		sh(script: """
 			cd BaikalTest
