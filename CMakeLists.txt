@@ -111,6 +111,10 @@ if (WIN32)
     add_custom_target(Copy3rdParty ALL
         COMMAND ${CMAKE_COMMAND} -E copy_if_different ${THIRDPARTY_DLLS} "$<TARGET_FILE_DIR:Baikal>"
     )
+
+    # Install 3rdparty dlls
+    install(FILES ${THIRDPARTY_DLLS} DESTINATION bin)
+
 else ()
     # Empty dummy target
     add_custom_target(Copy3rdParty)
@@ -148,3 +152,14 @@ if (WIN32)
 else ()
     install(FILES $<TARGET_FILE:RadeonRays> DESTINATION lib)
 endif ()
+
+# Configure CPack
+if (WIN32)
+    set(CPACK_GENERATOR "ZIP")
+else ()
+    set(CPACK_GENERATOR "TXZ")
+endif ()
+
+set(CPACK_PACKAGE_FILE_NAME "${CMAKE_PROJECT_NAME}")
+
+include(CPack)
