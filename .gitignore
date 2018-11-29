@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# Shader cache
+*.bin
+
+# Output/Reference images
+*.png

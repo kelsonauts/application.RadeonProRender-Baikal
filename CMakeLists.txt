@@ -148,3 +148,14 @@ if (WIN32)
 else ()
     install(FILES $<TARGET_FILE:RadeonRays> DESTINATION lib)
 endif ()
+
+# Configure CPack
+if (WIN32)
+    set(CPACK_GENERATOR "ZIP")
+else ()
+    set(CPACK_GENERATOR "TXZ")
+endif ()
+
+set(CPACK_PACKAGE_FILE_NAME "${CMAKE_PROJECT_NAME}")
+
+include(CPack)
