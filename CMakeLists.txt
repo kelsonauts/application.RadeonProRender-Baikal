@@ -111,6 +111,10 @@ if (WIN32)
     add_custom_target(Copy3rdParty ALL
         COMMAND ${CMAKE_COMMAND} -E copy_if_different ${THIRDPARTY_DLLS} "$<TARGET_FILE_DIR:Baikal>"
     )
+
+    # Install 3rdparty dlls
+    install(FILES ${THIRDPARTY_DLLS} DESTINATION bin)
+
 else ()
     # Empty dummy target
     add_custom_target(Copy3rdParty)
