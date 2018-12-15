@@ -47,7 +47,7 @@ node('Render') {
 	stage('Push to s3') {
 		sh(script: """
 			python Tools/scripts/generate_html.py BaikalTest/ReferenceImages index.html
-			aws s3 sync BaikalTest/ReferenceImages s3://infrastructure-storages-useast1-static-website/
+			aws s3 sync BaikalTest/ReferenceImages s3://infrastructure-storages-useast1-static-website/BaikalTest/ReferenceImages/
 			aws s3 cp index.html s3://infrastructure-storages-useast1-static-website/
 			"""
 		)
