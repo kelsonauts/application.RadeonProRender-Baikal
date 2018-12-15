@@ -39,6 +39,7 @@ node('Render') {
 		sh(script: """
 			cd BaikalTest
 			../build/bin/BaikalTest -genref 1
+			cd ..
 			"""
 		)
 	}
